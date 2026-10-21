@@ -229,9 +229,9 @@ async def create_ticket(
     status: Union[int, str],
     email: Optional[str] = None,
     requester_id: Optional[int] = None,
+    custom_fields: Optional[Dict[str, Any]] = None,
     group_id: Optional[Union[int, str]] = None,
-    responder_id: Optional[Union[int, str]] = None,
-    custom_fields: Optional[Dict[str, Any]] = None
+    responder_id: Optional[Union[int, str]] = None
 ) -> str:
     """Create a ticket in Freshservice.
 
