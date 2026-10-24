@@ -1,14 +1,13 @@
 [project]
-name = "freshservice-mcp"
-version = "1.0.0"
-description = "An MCP server for Freshservice"
+name = "freshservice-mcp-ids"
+version = "1.1.0"
+description = "Interim Freshservice MCP server; create_ticket accepts group_id and responder_id"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "build>=1.2.2.post1",
     "httpx==0.28.1",
-    "mcp[cli]>=1.3.0",
-    "pydantic>=2.10.6",
+    "mcp[cli]>=1.3.0,<1.9",
+    "pydantic>=2.10.6,<2.14",
 ]
 
 [[project.authors]]
@@ -23,6 +22,17 @@ email = "maanaesh.s@effy.co.in"
 name = "Vijay Ragunath"
 email = "vijay.r@effy.co.in"
 
+[project.urls]
+Homepage = "https://github.com/bainss/freshservice_mcp"
+Repository = "https://github.com/bainss/freshservice_mcp"
+
 [project.scripts]
 freshservice-mcp = "freshservice_mcp.server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/freshservice_mcp"]
 
