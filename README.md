@@ -40,7 +40,7 @@ The server provides a comprehensive toolkit for Freshservice operations:
 
 | Tool | Description | Key Parameters |
 |------|-------------|----------------|
-| `create_ticket` | Create new service tickets | `subject`, `description`, `source`, `priority`, `status`, `email` |
+| `create_ticket` | Create new service tickets | `subject`, `description`, `source`, `priority`, `status`, `email`, optional `group_id`, `responder_id` |
 | `update_ticket` | Update existing tickets | `ticket_id`, `updates` |
 | `delete_ticket` | Remove tickets | `ticket_id` |
 | `filter_tickets` | Find tickets matching criteria | `query` |
@@ -100,6 +100,12 @@ npx -y @smithery/cli install @effytech/freshservice_mcp --client claude
 
 2. Set up your domain and authentication details as shown below
 
+Until `group_id` and `responder_id` are in the upstream `freshservice-mcp` release, install this fork from PyPI as `freshservice-mcp-ids`. The command name stays `freshservice-mcp`.
+
+```bash
+uvx --from freshservice-mcp-ids==1.1.0 freshservice-mcp
+```
+
 ### Usage with Claude Desktop
 
 1. Install Claude Desktop from the [official website](https://claude.ai/desktop)
@@ -110,6 +116,8 @@ npx -y @smithery/cli install @effytech/freshservice_mcp --client claude
   "freshservice-mcp": {
     "command": "uvx",
     "args": [
+        "--from",
+        "freshservice-mcp-ids==1.1.0",
         "freshservice-mcp"
     ],
     "env": {
