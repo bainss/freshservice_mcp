@@ -103,7 +103,7 @@ npx -y @smithery/cli install @effytech/freshservice_mcp --client claude
 Until `group_id` and `responder_id` are in the upstream `freshservice-mcp` release, install this fork from PyPI as `freshservice-mcp-ids`. The command name stays `freshservice-mcp`.
 
 ```bash
-uvx --from freshservice-mcp-ids==1.1.0 freshservice-mcp
+uvx --from freshservice-mcp-ids==1.1.1 freshservice-mcp
 ```
 
 ### Usage with Claude Desktop
@@ -117,7 +117,7 @@ uvx --from freshservice-mcp-ids==1.1.0 freshservice-mcp
     "command": "uvx",
     "args": [
         "--from",
-        "freshservice-mcp-ids==1.1.0",
+        "freshservice-mcp-ids==1.1.1",
         "freshservice-mcp"
     ],
     "env": {
